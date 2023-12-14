@@ -1,2 +1,6 @@
 rootProject.name = 'ObsidianCloud'
+include 'common'
+include 'api'
+include 'master'
+include 'node'
 

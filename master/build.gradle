@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jline:jline:3.24.1'
+}

@@ -7,9 +7,13 @@ group = 'de.obsidiancloud'
 version = '0.0.1-alpha'
 
 repositories {
+    mavenCentral()
 }
 
 dependencies {
+    implementation 'org.jline:jline:3.24.1'
+    implementation project(':master')
+    implementation project(':node')
 }
 
 application {
@@ -27,5 +31,10 @@ jar {
     }
     from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    archiveFileName = 'DiruptioCloud.jar'
+    archiveFileName = 'ObsidianCloud.jar'
+}
+
+subprojects {
+    group = rootProject.group
+    version = rootProject.version
 }
