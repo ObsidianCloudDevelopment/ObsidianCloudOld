@@ -1,21 +1,60 @@
-.gradle
-**/build/
-!src/**/build/
+# JVM crash related
+core.*
+hs_err_pid*
 
-# Ignore Gradle GUI config
-gradle-app.setting
+# Intellij
+.idea/
+!/.idea/runConfigurations
+*.iml
+*.ipr
+*.iws
+out/
+run/
 
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
-
-# Cache of project
-.gradletasknamecache
-
-# Eclipse Gradle plugin generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
+# Eclipse
 .classpath
+.project
+.settings/
+
+# netbeans
+nbproject/
+nbactions.xml
+
+# Gradle
+!gradle-wrapper.jar
+.gradle/
+build/
+*/build/
+
+# we use maven!
+build.xml
+
+# Maven
+log/
+target/
+dependency-reduced-pom.xml
+
+# various other potential build files
+build/
+bin/
+dist/
+manifest.mf
+
+# Mac
+.DS_Store/
+.DS_Store
+
+# vim
+.*.sw[a-p]
+
+# Linux temp files
+*~
+
+# other stuff
+run/
+
+build-data/
+Purpur-API
+Purpur-MojangAPI
+Purpur-Server
+*.jar

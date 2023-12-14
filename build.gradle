@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'de.obsidiancloud'
+version = '0.0.1-alpha'
+
+repositories {
+}
+
+dependencies {
+}
+
+application {
+    mainClass = 'de.obsidiancloud.ObsidianCloud'
+}
+
+run {
+    workingDir = new File(rootProject.projectDir, 'run')
+    workingDir.mkdir()
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": application.mainClass
+    }
+    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    archiveFileName = 'DiruptioCloud.jar'
+}
