@@ -1,4 +1,0 @@
-package de.obsidiancloud.master.templates.commands;
-
-public class CreateCommand {
-}
