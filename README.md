@@ -6,5 +6,5 @@ The greatest minecraft cloud system of all time
 ## ToDo
 - [ ] Bukkit Plugin
 - [ ] BungeeCord Plugin
-- [ ] Startscript like alikar -Dcom.mojang.eula.agree=true, ...
+- [ ] Startscript like alkar -Dcom.mojang.eula.agree=true, ...
 - [ ] Webinterface
