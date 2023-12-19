@@ -1,33 +1,6 @@
 package de.obsidiancloud.api.servers;
 
-import java.util.UUID;
+import de.obsidiancloud.api.task.ObsidianTask;
 
-public class ObsidianServer {
-    private UUID uniqueId;
-    private String name;
-    private ServerState state;
-    private int maxPlayers;
-    private int ram;
-
-    // Getter
-    public ServerState getState() {
-        return state;
-    }
-
-    public UUID getUniqueId() {
-        return uniqueId;
-    }
-
-    // Setter
-    public void setState(ServerState state) {
-        this.state = state;
-    }
-
-    public void setMaxPlayers(int maxPlayers) {
-        this.maxPlayers = maxPlayers;
-    }
-
-    public void setRam(int ram) {
-        this.ram = ram;
-    }
+public record ObsidianServer(String name, ServerState state, ObsidianTask task, int maxPlayers, boolean staticServer) {
 }

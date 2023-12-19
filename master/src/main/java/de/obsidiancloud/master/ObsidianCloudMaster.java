@@ -1,19 +1,29 @@
 package de.obsidiancloud.master;
 
-import org.jline.terminal.Terminal;
-import org.jline.terminal.TerminalBuilder;
+import de.obsidiancloud.common.cli.CLI;
+import de.obsidiancloud.common.cli.Command;
+import de.obsidiancloud.common.config.YamlConfig;
+import de.obsidiancloud.common.util.Logger;
+import de.obsidiancloud.master.commands.ShutdownCommand;
 
-import java.util.logging.Logger;
+import java.io.File;
 
 public class ObsidianCloudMaster {
-    private static Logger LOGGER;
+    public static Logger LOGGER = new Logger("main");
+    private static YamlConfig config;
 
     public static void main(String[] args) {
-        try {
-            Terminal terminal = TerminalBuilder.builder().build();
-            terminal.writer().println("");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        LOGGER.info("Welcome to ObsidianCloud");
+        LOGGER.info("Starting master...");
+        config = new YamlConfig();
+        config.load(new File("config.yml"));
+        Command.register(new ShutdownCommand());
+        CLI.setDefaultPrompt("> ");
+        CLI.setWrongCommandMessage("Unknown command. Type \"help\" for help.");
+        CLI.start();
+    }
+
+    public static YamlConfig getConfig() {
+        return config;
     }
 }

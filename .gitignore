@@ -10,6 +10,7 @@ hs_err_pid*
 *.iws
 out/
 run/
+.run/
 
 # Eclipse
 .classpath

@@ -8,7 +8,9 @@ repositories {
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'org.jline:jline:3.24.1'
     implementation 'org.mongodb:mongodb-driver-core:4.10.2'
     implementation 'org.mongodb:mongodb-driver-sync:4.10.2'
+    implementation 'io.netty:netty-all:4.1.65.Final'
+    implementation project(':common')
+    implementation project(':api')
 }
